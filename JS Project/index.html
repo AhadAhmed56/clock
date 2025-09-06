@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: auto;
+      width: 90%;
+      max-width: 500px;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    #wrapper:hover {
+      transform: translateY(-5px);
+    }
+
+    #wrapper h1 {
+      margin-bottom: 1rem;
+      font-weight: bolder;
+      font-size: 2rem;
+      color: #4fc3f7;
+      letter-spacing: 1px;
+    }
+
+    #wrapper p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    form label {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    form .guessField {
+      width: 80%;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: border 0.3s;
+    }
+
+    form .guessField:focus {
+      border: 1px solid #4fc3f7;
+    }
+
+    form .guessSubmit {
+      padding: 0.8rem 1.6rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    form .guessSubmit:hover {
+      background: linear-gradient(135deg, #43a047, #1b5e20);
+      transform: scale(1.05);
+    }
+
+    .resultParas {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .resultParas span {
+      font-weight: bold;
+      color: #ffca28;
+    }
+
+    .lowOrHi {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #f06292;
+    }
+
+    /* New Game Button Style */
+    .button button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: linear-gradient(135deg, #2196f3, #1976d2);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .button button:hover {
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="wrapper">
+    <h1>Number Guessing Game</h1>
+    <p>Try and guess a random number between 1 and 100</p>
+    <p>You have 10 attempts to guess the right number</p>
+    <br>
+    <form class="form">
+      <label for="guessField" id="guess">Enter your guess</label>
+      <input type="number" id="guessField" class="guessField" placeholder="Type a number...">
+      <br>
+      <input type="submit" id="subt" value="Submit Guess" class="guessSubmit">
+    </form>
+
+    <div class="resultParas">
+      <p>Previous Guesses: <span class="guesses"></span></p>
+      <p>Guesses Remaining: <span class="lastResult">10</span></p>
+      <p class="lowOrHi"></p>
+    </div>
+  </div>
+
+  <script src="number.js"></script>
+</body>
+</html>
